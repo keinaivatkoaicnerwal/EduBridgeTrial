@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBridge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HOME SECTION -->
+    <div id="home-section">
+        <h1>Welcome to EduBridge</h1>
+        <p>Take a quick placement test to find your grade level.</p>
+        <button onclick="startTest()" class="btn">Start Placement Test</button>
+    </div>
+
+    <!-- ASSESSMENT SECTION (5 Questions) -->
+    <div id="assessment-section" style="display: none;">
+        <h2>Placement Test</h2>
+        <form id="quiz-form">
+            
+            <div class="question">
+                <p>1. What is the result of 15 + 27?</p>
+                <label><input type="radio" name="q1" value="wrong"> 32</label><br>
+                <label><input type="radio" name="q1" value="correct"> 42</label><br>
+                <label><input type="radio" name="q1" value="wrong"> 52</label>
+            </div>
+
+            <div class="question">
+                <p>2. What do plants primarily need to make food?</p>
+                <label><input type="radio" name="q2" value="wrong"> Sand</label><br>
+                <label><input type="radio" name="q2" value="correct"> Sunlight</label><br>
+                <label><input type="radio" name="q2" value="wrong"> Wind</label>
+            </div>
+
+            <div class="question">
+                <p>3. Solve for x: 3x = 12</p>
+                <label><input type="radio" name="q3" value="wrong"> 3</label><br>
+                <label><input type="radio" name="q3" value="correct"> 4</label><br>
+                <label><input type="radio" name="q3" value="wrong"> 6</label>
+            </div>
+
+            <div class="question">
+                <p>4. Which organ pumps blood throughout the human body?</p>
+                <label><input type="radio" name="q4" value="wrong"> Lungs</label><br>
+                <label><input type="radio" name="q4" value="wrong"> Brain</label><br>
+                <label><input type="radio" name="q4" value="correct"> Heart</label>
+            </div>
+
+            <div class="question">
+                <p>5. What is the capital city of France?</p>
+                <label><input type="radio" name="q5" value="correct"> Paris</label><br>
+                <label><input type="radio" name="q5" value="wrong"> London</label><br>
+                <label><input type="radio" name="q5" value="wrong"> Rome</label>
+            </div>
+
+            <button type="button" onclick="submitTest()" class="btn">Submit Answers</button>
+        </form>
+    </div>
+
+    <!-- DASHBOARD SECTION -->
+    <div id="dashboard-section" style="display: none;">
+        <h2>Test Completed! 🎉</h2>
+        <p id="grade-result-text" class="result-text"></p>
+
+        <!-- GRADE 7 MATERIALS -->
+        <div id="grade-7-content" class="grade-content" style="display: none;">
+            <div class="section-box">
+                <h3 class="section-title">📹 Video Lessons</h3>
+                <ul>
+                    <li>Basic Algebra <button class="action-btn" onclick="openModal('Basic Algebra', 'video')">Watch</button></li>
+                    <li>Biology: Plant Cells <button class="action-btn" onclick="openModal('Plant Cells', 'video')">Watch</button></li>
+                </ul>
+            </div>
+
+            <div class="section-box">
+                <h3 class="section-title">📝 Assignments</h3>
+                <ul>
+                    <li>Algebra Practice Quiz <button class="action-btn green" onclick="openModal('Algebra Practice Quiz', 'assignment')">Start</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- GRADE 8 MATERIALS -->
+        <div id="grade-8-content" class="grade-content" style="display: none;">
+            <div class="section-box">
+                <h3 class="section-title">📹 Video Lessons</h3>
+                <ul>
+                    <li>Geometry: Triangles <button class="action-btn" onclick="openModal('Geometry: Triangles', 'video')">Watch</button></li>
+                    <li>Physics: Gravity <button class="action-btn" onclick="openModal('Physics: Gravity', 'video')">Watch</button></li>
+                </ul>
+            </div>
+
+            <div class="section-box">
+                <h3 class="section-title">📝 Assignments</h3>
+                <ul>
+                    <li>Triangle Area Worksheet <button class="action-btn green" onclick="openModal('Triangle Area Worksheet', 'assignment')">Start</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- GRADE 9 MATERIALS -->
+        <div id="grade-9-content" class="grade-content" style="display: none;">
+            <div class="section-box">
+                <h3 class="section-title">📹 Video Lessons</h3>
+                <ul>
+                    <li>Advanced Math: Quadratics <button class="action-btn" onclick="openModal('Quadratics', 'video')">Watch</button></li>
+                    <li>Chemistry: Elements <button class="action-btn" onclick="openModal('Chemistry Elements', 'video')">Watch</button></li>
+                </ul>
+            </div>
+
+            <div class="section-box">
+                <h3 class="section-title">📝 Assignments</h3>
+                <ul>
+                    <li>Quadratic Equations Test <button class="action-btn green" onclick="openModal('Quadratic Equations Test', 'assignment')">Start</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <button onclick="location.reload()" class="btn-secondary">Retake Test</button>
+    </div>
+
+</div>
+
+<!-- POP-UP MODAL WINDOW -->
+<div id="modal-window" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title">Title</h3>
+        <p id="modal-description">Details will appear here...</p>
+        <button onclick="closeModal()" class="btn">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
